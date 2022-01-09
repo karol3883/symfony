@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="993f7ccc-64b7-4cab-8a8f-15504d95fe5b" name="guestbook" url="s1.ct8.pl">
+        <fileTransfer rootFolder="/usr/home/karol3883/domains/meble.ct8.pl/public_html" accessType="SFTP" host="s1.ct8.pl" port="22" sshConfigId="11ae6464-f57e-4da9-b1d0-c4c8a593f093" sshConfig="karol3883@s1.ct8.pl:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

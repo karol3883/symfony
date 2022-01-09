@@ -14,17 +14,26 @@ class ConferenceController extends AbstractController
     #[Route('/', name: 'conference')]
     public function index(Environment $twig, ConferenceRepository $conferenceRepository): Response
     {
-        return new Response($twig->render('conference/index.html.twig', [
-            'conferences' => $conferenceRepository->findAll(),
-        ]));
+        return new Response($twig->render('conference/index.html.twig',
+            [
+                'conferences' => $conferenceRepository->findAll(),
+            ],
+        ));
     }
 
     #[Route('/conference/{id}', name: 'conference')]
     public function show(Environment $twig, Conference $conference, CommentRepository $commentRepository): Response
     {
-        return new Response($twig->render('conference/show.html.twig', [
-            'conference' => $conference,
-            'comments' => $commentRepository->findBy(['conference' => $conference], ['createdAt' => 'DESC']),
-        ]));
+        return new Response($twig->render('conference/show.html.twig',
+            [
+                'conference' => $conference,
+                'comments' => $commentRepository->findBy(
+                    ['conference' => $conference],
+                    [
+                        'createdAt' => 'DESC'
+                    ]
+                ),
+            ]
+        ));
     }
 }
